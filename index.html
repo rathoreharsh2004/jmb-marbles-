@@ -1,566 +1,294 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#6f7958">
-  <meta name="description" content="Jai Maa Bhawani Marbles — shop marble moortis, mandirs, fountains and marble pillars with product details, prices, cart and WhatsApp ordering.">
-  <title>Jai Maa Bhawani Marbles</title>
-  <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --olive:#747e59; --olive-dark:#5f6849; --ink:#191918; --muted:#73736d;
-      --paper:#fff; --cream:#f5f3ed; --line:#e9e7e0; --sale:#b33d45;
-      --shadow:0 14px 40px rgba(20,20,16,.08); --radius:2px;
-    }
-    *{box-sizing:border-box} html{scroll-behavior:smooth}
-    body{margin:0;color:var(--ink);background:#fff;font-family:"DM Sans",Arial,sans-serif;line-height:1.5}
-    img{display:block;max-width:100%} a{color:inherit;text-decoration:none}
-    button,input,textarea{font:inherit} button{cursor:pointer}
-    .announce{background:var(--olive);color:#fff;text-align:center;font-size:11px;letter-spacing:.09em;padding:9px 14px;text-transform:uppercase}
-    header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-    .nav{max-width:1380px;margin:auto;height:76px;display:grid;grid-template-columns:180px 1fr 210px;align-items:center;padding:0 28px;gap:24px}
-    .brand{display:flex;align-items:center;gap:10px;min-width:0}
-    .brand-mark{width:40px;height:40px;border:1px solid #b7b7aa;border-radius:50%;display:grid;place-items:center;font-family:Georgia,serif;font-size:20px}
-    .brand-name{font-family:"Playfair Display",Georgia,serif;font-size:16px;line-height:1.05;letter-spacing:.02em}
-    .brand-name small{display:block;font-family:"DM Sans",sans-serif;font-size:8px;letter-spacing:.24em;text-transform:uppercase;margin-top:3px;color:#8a8a83}
-    .links{display:flex;justify-content:center;gap:25px;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
-    .links a{position:relative;padding:31px 0}.links a:hover{color:var(--olive-dark)}
-    .nav-actions{display:flex;justify-content:flex-end;align-items:center;gap:12px}
-    .search{border:1px solid var(--line);display:flex;align-items:center;padding:8px 10px;gap:7px;width:135px}
-    .search input{border:0;outline:0;width:100%;font-size:11px;background:transparent}
-    .icon-btn{border:0;background:none;padding:8px;font-size:18px}
-    .menu-btn{display:none;border:0;background:none;font-size:24px}
-    .hero{min-height:660px;display:grid;grid-template-columns:1fr 1.05fr;background:var(--cream)}
-    .hero-copy{display:flex;align-items:center;padding:80px clamp(28px,7vw,110px)}
-    .eyebrow{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--olive-dark);font-weight:700;margin-bottom:18px}
-    h1,h2,h3{margin:0;font-family:"Playfair Display",Georgia,serif;font-weight:600}
-    h1{font-size:clamp(46px,6vw,88px);line-height:.98;max-width:650px}
-    .hero-copy p{color:#65655f;max-width:520px;margin:25px 0 30px;font-size:15px}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 19px;background:var(--ink);color:#fff;border:1px solid var(--ink);font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;transition:.2s}
-    .btn:hover{transform:translateY(-2px);background:var(--olive-dark);border-color:var(--olive-dark)}
-    .btn.alt{background:transparent;color:var(--ink)}
-    .hero-img{min-height:660px;background:#ddd;overflow:hidden}
-    .hero-img img{width:100%;height:100%;object-fit:cover;object-position:center}
-    .trust-strip{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--line)}
-    .trust-item{padding:23px 20px;text-align:center;border-right:1px solid var(--line)}
-    .trust-item:last-child{border-right:0}.trust-item strong{display:block;font-family:"Playfair Display";font-size:17px}
-    .trust-item span{font-size:10px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
-    .section{max-width:1380px;margin:auto;padding:95px 28px}
-    .section-head{display:flex;align-items:end;justify-content:space-between;gap:25px;margin-bottom:38px}
-    .section-head h2{font-size:clamp(32px,4vw,54px);line-height:1.05}
-    .section-head p{max-width:470px;color:var(--muted);font-size:14px;margin:0}
-    .about{display:grid;grid-template-columns:1.05fr .95fr;gap:70px;align-items:center}
-    .about-img{height:560px;overflow:hidden}.about-img img{width:100%;height:100%;object-fit:cover}
-    .about-copy p{color:var(--muted);font-size:15px}.about-points{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:28px 0}
-    .about-point{border-top:1px solid var(--line);padding-top:14px;font-size:12px}.about-point b{display:block;margin-bottom:4px}
-    .why{background:var(--cream);max-width:none}.why-inner{max-width:1380px;margin:auto;padding:95px 28px}
-    .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
-    .why-card{background:#fff;padding:34px 26px;min-height:205px}.num{font-family:"Playfair Display";font-size:35px;color:var(--olive);margin-bottom:30px}
-    .why-card h3{font-size:22px;margin-bottom:10px}.why-card p{color:var(--muted);font-size:13px;margin:0}
-    .categories{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.cat{position:relative;height:390px;overflow:hidden;background:#ddd}.cat img{width:100%;height:100%;object-fit:cover;transition:.5s}.cat:hover img{transform:scale(1.04)}
-    .cat:after{content:"";position:absolute;inset:50% 0 0;background:linear-gradient(transparent,rgba(0,0,0,.65))}
-    .cat-label{position:absolute;z-index:2;bottom:20px;left:20px;color:#fff}.cat-label span{font-size:9px;letter-spacing:.16em;text-transform:uppercase}.cat-label h3{font-size:27px}
-    .products-wrap{background:#fff}.toolbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:25px;border-bottom:1px solid var(--line);padding-bottom:14px}
-    .count{font-size:11px;color:var(--muted)}.sort{font-size:11px;border:1px solid var(--line);padding:9px 12px;background:#fff}
-    .product-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px 10px}
-    .product-card{min-width:0}.product-image{height:390px;background:#f0eee8;position:relative;overflow:hidden}.product-image img{width:100%;height:100%;object-fit:cover;transition:.45s}.product-card:hover .product-image img{transform:scale(1.025)}
-    .badge{position:absolute;top:9px;left:9px;background:#111;color:#fff;padding:5px 7px;font-size:8px;letter-spacing:.06em;text-transform:uppercase;z-index:2}
-    .quick{position:absolute;left:50%;bottom:12px;transform:translate(-50%,15px);opacity:0;background:#111;color:#fff;border:0;padding:10px 16px;font-size:9px;letter-spacing:.1em;text-transform:uppercase;transition:.2s;z-index:3;white-space:nowrap}
-    .product-card:hover .quick{opacity:1;transform:translate(-50%,0)}
-    .product-info{padding:11px 2px}.product-info h3{font-family:"DM Sans";font-size:12px;font-weight:600;margin:0 0 6px}.meta{font-size:10px;color:var(--muted)}
-    .enquire{margin-top:10px;border:0;background:none;padding:0;font-size:9px;letter-spacing:.1em;text-transform:uppercase;text-decoration:underline;text-underline-offset:4px}
-    .pager{display:flex;justify-content:center;gap:8px;margin-top:45px}.page-btn{min-width:34px;height:34px;border:1px solid var(--line);background:#fff;font-size:10px}.page-btn.active,.page-btn:hover{background:#111;color:#fff;border-color:#111}
-    .page-panel{display:none}.page-panel.active{display:block}
-    .feature-band{background:var(--olive);color:#fff}.feature-inner{max-width:1380px;margin:auto;padding:75px 28px;display:grid;grid-template-columns:1fr 2fr;gap:50px;align-items:center}.feature-inner h2{font-size:45px}.feature-inner p{margin:0;color:#eef0e8;font-size:14px}
-    .reviews{background:var(--cream)}.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.review{background:#fff;padding:30px;min-height:225px}.stars{letter-spacing:.18em;font-size:12px;margin-bottom:25px}.review p{font-family:"Playfair Display";font-size:19px;line-height:1.4;margin:0 0 24px}.review small{color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.1em}
-    .faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.faq{border-top:1px solid var(--line)}.faq button{width:100%;border:0;background:none;text-align:left;padding:20px 0;display:flex;justify-content:space-between;font-weight:600;font-size:13px}.faq-content{display:none;color:var(--muted);font-size:13px;padding:0 30px 20px 0}.faq.open .faq-content{display:block}.faq.open button span{transform:rotate(45deg)}
-    .contact{display:grid;grid-template-columns:1fr 1fr;gap:60px}.contact-form{display:grid;gap:12px}.field{border:1px solid var(--line);padding:14px;background:#fff;outline:none;width:100%;font-size:13px}.field:focus{border-color:#999}.contact-form textarea{min-height:130px;resize:vertical}.map{min-height:410px;border:0;width:100%;background:#eee}
-    footer{background:var(--olive);color:#fff}.footer-inner{max-width:1380px;margin:auto;padding:65px 28px 25px}.footer-top{display:grid;grid-template-columns:1.3fr 1fr 1fr 1.3fr;gap:45px}.footer-brand{font-family:"Playfair Display";font-size:25px}.footer h4{font-size:9px;letter-spacing:.14em;text-transform:uppercase;margin:0 0 18px}.footer a,.footer p{display:block;color:#edf0e7;font-size:11px;margin:7px 0}.newsletter{display:flex;border-bottom:1px solid rgba(255,255,255,.5);padding-bottom:8px}.newsletter input{flex:1;border:0;background:transparent;color:#fff;outline:0;font-size:11px}.newsletter button{border:0;background:none;color:#fff}.footer-bottom{border-top:1px solid rgba(255,255,255,.25);margin-top:50px;padding-top:17px;display:flex;justify-content:space-between;color:#dfe3d7;font-size:9px}
-    .whatsapp{position:fixed;right:20px;bottom:20px;width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:#25D366;color:#fff;z-index:80;box-shadow:0 8px 25px rgba(0,0,0,.18);font-size:24px}.whatsapp:hover{transform:translateY(-3px)}
-    .toast{position:fixed;left:50%;bottom:25px;transform:translate(-50%,20px);opacity:0;background:#111;color:#fff;padding:12px 18px;font-size:11px;z-index:100;transition:.25s}.toast.show{opacity:1;transform:translate(-50%,0)}
-    .modal{position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;place-items:center;z-index:90;padding:20px}.modal.show{display:grid}.modal-box{background:#fff;max-width:780px;width:100%;display:grid;grid-template-columns:1fr 1fr;position:relative}.modal-box img{height:480px;width:100%;object-fit:cover}.modal-copy{padding:38px}.close{position:absolute;right:12px;top:10px;border:0;background:#fff;font-size:22px;width:35px;height:35px;z-index:2}
-
-    /* Ecommerce upgrade */
-    .hero{position:relative;overflow:hidden}
-    .hero-slider{position:relative;min-height:660px;height:100%;background:#ddd;overflow:hidden}
-    .hero-slide{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity .65s ease}
-    .hero-slide.active{opacity:1;visibility:visible}
-    .hero-slide img{width:100%;height:100%;object-fit:cover;object-position:center}
-    .hero-slide:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.03),rgba(0,0,0,.12))}
-    .hero-controls{position:absolute;right:22px;bottom:22px;z-index:4;display:flex;align-items:center;gap:8px}
-    .hero-arrow,.hero-dot{border:1px solid rgba(255,255,255,.75);background:rgba(255,255,255,.9);width:36px;height:36px;display:grid;place-items:center;font-size:14px}
-    .hero-dot{width:7px;height:7px;border-radius:50%;padding:0;background:rgba(255,255,255,.6);border:0}
-    .hero-dot.active{background:#111}
-    .price{font-size:13px;font-weight:700;margin-top:6px}
-    .price-note{font-size:9px;color:var(--muted);margin-top:2px}
-    .product-actions{display:flex;gap:7px;align-items:center;margin-top:12px}
-    .add-cart,.buy-now{border:1px solid #111;background:#111;color:#fff;padding:9px 10px;font-size:8px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
-    .add-cart:hover,.buy-now:hover{background:var(--olive-dark);border-color:var(--olive-dark)}
-    .add-cart{flex:1}
-    .cart-trigger{position:relative}
-    .cart-count{position:absolute;top:1px;right:0;background:#111;color:#fff;border-radius:50%;min-width:16px;height:16px;display:grid;place-items:center;font-size:8px}
-    .cart-drawer{position:fixed;inset:0;z-index:120;pointer-events:none}
-    .cart-drawer.open{pointer-events:auto}
-    .cart-overlay{position:absolute;inset:0;background:rgba(0,0,0,.42);opacity:0;transition:.25s}
-    .cart-drawer.open .cart-overlay{opacity:1}
-    .cart-panel{position:absolute;right:0;top:0;height:100%;width:min(430px,94vw);background:#fff;transform:translateX(100%);transition:.3s;display:flex;flex-direction:column;box-shadow:-15px 0 45px rgba(0,0,0,.12)}
-    .cart-drawer.open .cart-panel{transform:translateX(0)}
-    .cart-head{display:flex;justify-content:space-between;align-items:center;padding:22px;border-bottom:1px solid var(--line)}
-    .cart-head h3{font-size:24px}
-    .cart-close{border:0;background:none;font-size:24px}
-    .cart-items{padding:18px;overflow:auto;flex:1}
-    .cart-item{display:grid;grid-template-columns:72px 1fr auto;gap:12px;padding:13px 0;border-bottom:1px solid var(--line)}
-    .cart-item img{width:72px;height:82px;object-fit:cover;background:#f1efe8}
-    .cart-item h4{margin:0 0 5px;font-size:12px}
-    .cart-item p{margin:0;color:var(--muted);font-size:10px}
-    .qty{display:flex;align-items:center;gap:7px;margin-top:9px}
-    .qty button{width:24px;height:24px;border:1px solid var(--line);background:#fff}
-    .remove{border:0;background:none;color:#999;font-size:9px;text-decoration:underline;margin-top:5px}
-    .cart-footer{padding:20px;border-top:1px solid var(--line)}
-    .cart-total{display:flex;justify-content:space-between;font-weight:700;margin-bottom:14px}
-    .checkout{width:100%;padding:14px;background:#25D366;color:#fff;border:0;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
-    .checkout:disabled{background:#ddd;color:#888}
-    .empty-cart{text-align:center;color:var(--muted);padding:70px 20px;font-size:13px}
-    .zoomable{cursor:zoom-in}
-    .modal-box{max-width:980px}
-    .modal-media{position:relative;background:#f0eee8;overflow:hidden}
-    .modal-box img{transition:transform .35s ease;transform-origin:center center}
-    .modal-media.zoomed img{transform:scale(1.75);cursor:zoom-out}
-    .zoom-hint{position:absolute;left:12px;bottom:12px;background:rgba(17,17,17,.82);color:#fff;padding:7px 9px;font-size:8px;letter-spacing:.08em;text-transform:uppercase;z-index:2}
-    .modal-price{font-size:21px;font-weight:700;margin:14px 0 3px}
-    .modal-copy .meta{margin-bottom:14px}
-    .modal-copy ul{padding-left:17px;color:var(--muted);font-size:12px}
-    .modal-actions{display:flex;gap:8px;margin-top:20px}
-    .modal-actions .btn{flex:1}
-    @media(max-width:780px){
-      .hero-slider{min-height:420px}
-      .modal-box{grid-template-columns:1fr;max-height:92vh;overflow:auto}
-      .modal-box img{height:360px}
-      .modal-copy{padding:24px}
-      .modal-media.zoomed img{transform:scale(1.35)}
-      .product-actions{flex-direction:column;align-items:stretch}
-      .add-cart,.buy-now{width:100%}
-    }
-
-    @media(max-width:1050px){.nav{grid-template-columns:160px 1fr 170px}.links{gap:14px}.search{width:110px}.product-grid{grid-template-columns:repeat(3,1fr)}.categories{grid-template-columns:repeat(2,1fr)}.why-grid{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:780px){
-      .nav{height:65px;grid-template-columns:1fr auto;padding:0 18px}.menu-btn{display:block}.links{display:none}.nav-actions{display:none}.brand-name{font-size:15px}
-      .hero{grid-template-columns:1fr;min-height:auto}.hero-copy{padding:65px 22px}.hero-img{min-height:420px}.hero-copy p{font-size:14px}
-      .trust-strip{grid-template-columns:1fr 1fr}.trust-item{padding:17px 10px}.trust-item:nth-child(2){border-right:0}.trust-item:nth-child(-n+2){border-bottom:1px solid var(--line)}
-      .section,.why-inner{padding:65px 18px}.about,.contact{grid-template-columns:1fr;gap:35px}.about-img{height:430px}.product-grid{grid-template-columns:repeat(2,1fr);gap:24px 8px}.product-image{height:300px}
-      .categories{grid-template-columns:1fr 1fr}.cat{height:280px}.cat-label h3{font-size:22px}.feature-inner{grid-template-columns:1fr;padding:55px 18px}.feature-inner h2{font-size:38px}.review-grid,.faq-grid{grid-template-columns:1fr}
-      .footer-top{grid-template-columns:1fr 1fr}.footer-top>div:first-child,.footer-top>div:last-child{grid-column:1/-1}.footer-bottom{display:block}.footer-bottom span{display:block;margin-top:6px}
-      .modal-box{grid-template-columns:1fr}.modal-box img{height:300px}.modal-copy{padding:25px}
-    }
-    @media(max-width:460px){.product-grid{grid-template-columns:1fr 1fr}.product-image{height:245px}.categories{grid-template-columns:1fr}.cat{height:330px}.footer-top{grid-template-columns:1fr}.footer-top>div{grid-column:auto!important}.hero-img{min-height:340px}}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Jai Maa Bhawani Marbles - marble moortis, mandirs, fountains and marble pillars.">
+<title>Jai Maa Bhawani Marbles | Premium Marble Collection</title>
+<style>
+:root{
+  --ink:#191919;--muted:#6d6d6d;--cream:#f7f4ee;--paper:#fff;
+  --line:#e8e3db;--accent:#8a5b35;--accent2:#b4875c;
+  --shadow:0 18px 50px rgba(26,20,14,.10);--radius:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--paper);line-height:1.55}
+img{display:block;max-width:100%}
+button,input,textarea,select{font:inherit}
+button{cursor:pointer}
+a{color:inherit;text-decoration:none}
+.container{width:min(1180px,92%);margin:auto}
+.topbar{background:#181818;color:#fff;text-align:center;padding:9px 15px;font-size:12px;letter-spacing:.5px}
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:25px}
+.logo{font-family:Georgia,serif;font-size:21px;font-weight:700;letter-spacing:.2px}
+.logo span{display:block;font:10px Arial;letter-spacing:3px;color:var(--accent);margin-top:2px}
+nav{display:flex;gap:25px;font-size:13px}
+nav a{position:relative}
+nav a:after{content:"";position:absolute;left:0;bottom:-7px;width:0;height:1px;background:var(--accent);transition:.25s}
+nav a:hover:after{width:100%}
+.nav-actions{display:flex;align-items:center;gap:9px}
+.icon-btn{width:40px;height:40px;border:1px solid var(--line);background:#fff;border-radius:50%;display:grid;place-items:center}
+.cart-count{position:absolute;margin:-28px 0 0 25px;background:var(--accent);color:#fff;width:18px;height:18px;border-radius:50%;font-size:10px;display:grid;place-items:center}
+.menu{display:none}
+.hero{position:relative;height:min(720px,78vh);min-height:550px;overflow:hidden;background:#ddd}
+.slide{position:absolute;inset:0;opacity:0;transition:opacity .8s ease}
+.slide.active{opacity:1}
+.slide img{width:100%;height:100%;object-fit:cover}
+.slide:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.60),rgba(0,0,0,.15) 65%,rgba(0,0,0,.08))}
+.hero-content{position:absolute;z-index:3;inset:0;display:flex;align-items:center}
+.hero-copy{max-width:610px;color:#fff}
+.kicker{text-transform:uppercase;letter-spacing:4px;font-size:11px;margin-bottom:18px}
+.hero h1{font:700 clamp(42px,6vw,76px)/1.02 Georgia,serif;margin-bottom:20px}
+.hero p{font-size:16px;max-width:500px;color:#f4f4f4;margin-bottom:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 20px;border-radius:5px;border:1px solid var(--ink);background:var(--ink);color:#fff;font-size:12px;letter-spacing:.5px;transition:.2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.light{background:#fff;color:#191919;border-color:#fff}
+.btn.outline{background:transparent;color:var(--ink)}
+.hero .btn.outline{color:#fff;border-color:#fff}
+.dots{position:absolute;z-index:4;bottom:27px;left:4%;display:flex;gap:7px}
+.dot{width:28px;height:2px;background:rgba(255,255,255,.45);border:0}
+.dot.active{background:#fff}
+.section{padding:90px 0}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:34px}
+.eyebrow{text-transform:uppercase;color:var(--accent);font-size:10px;letter-spacing:3px;margin-bottom:8px}
+h2{font:700 clamp(30px,4vw,46px)/1.1 Georgia,serif}
+.section-head p{max-width:440px;color:var(--muted);font-size:13px}
+.about{background:var(--cream)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.about-img{border-radius:5px;overflow:hidden;box-shadow:var(--shadow)}
+.about-img img{width:100%;height:520px;object-fit:cover}
+.about-copy p{color:var(--muted);font-size:14px;margin:18px 0}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:30px}
+.stat{border-top:1px solid #d8d0c5;padding-top:13px}.stat b{display:block;font:25px Georgia}.stat span{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:1px}
+.features{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.feature{background:#fff;padding:30px 24px;min-height:170px}.feature strong{font:19px Georgia;display:block;margin:25px 0 7px}.feature p{font-size:12px;color:var(--muted)}
+.feature-icon{font-size:25px}
+.categories{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.cat{position:relative;overflow:hidden;height:340px;border-radius:8px;color:#fff}
+.cat img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.cat:hover img{transform:scale(1.05)}
+.cat:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 35%,rgba(0,0,0,.75))}
+.cat-text{position:absolute;z-index:2;left:20px;right:20px;bottom:20px}.cat-text h3{font:24px Georgia}.cat-text p{font-size:11px;opacity:.85}
+.products{background:#faf9f7}
+.toolbar{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:22px}
+.search{border:1px solid var(--line);background:#fff;padding:12px 14px;border-radius:5px;width:min(310px,100%);outline:0}
+.select{border:1px solid var(--line);padding:12px 14px;background:#fff;border-radius:5px}
+.product-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden;position:relative;transition:.25s}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.card-img{height:290px;position:relative;overflow:hidden;background:#eee}
+.card-img img{width:100%;height:100%;object-fit:cover;transition:.45s}
+.card:hover .card-img img{transform:scale(1.035)}
+.badge{position:absolute;left:12px;top:12px;background:#fff;padding:5px 8px;font-size:9px;text-transform:uppercase;letter-spacing:1px}
+.zoom-hint{position:absolute;right:12px;bottom:12px;background:rgba(255,255,255,.92);padding:7px 9px;border-radius:50%;font-size:13px}
+.card-body{padding:16px}
+.card-cat{font-size:9px;letter-spacing:1.4px;text-transform:uppercase;color:var(--accent)}
+.card h3{font:18px Georgia;margin:6px 0}
+.price{font-weight:700;margin:7px 0 14px}
+.card-actions{display:flex;gap:7px}.card-actions .btn{flex:1;padding:10px 8px;font-size:10px}
+.pagination{display:flex;justify-content:center;gap:8px;margin-top:35px}.page-btn{border:1px solid var(--line);background:#fff;width:38px;height:38px;border-radius:5px}.page-btn.active{background:var(--ink);color:#fff}
+.reviews{background:var(--cream)}
+.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.review{background:#fff;padding:28px;border:1px solid var(--line);border-radius:8px}.stars{letter-spacing:2px;margin-bottom:12px}.review p{font:16px/1.6 Georgia;color:#333;margin-bottom:18px}.review small{color:var(--muted)}
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px 50px}
+.faq{border-bottom:1px solid var(--line)}.faq button{width:100%;padding:18px 0;border:0;background:none;text-align:left;font-weight:700;display:flex;justify-content:space-between}.faq-content{display:none;color:var(--muted);font-size:13px;padding:0 0 18px}.faq.open .faq-content{display:block}
+.contact{background:#181818;color:#fff}.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px}.contact p{color:#bbb;font-size:14px;margin:15px 0 25px}.form{display:grid;gap:10px}.form input,.form textarea{background:#242424;color:#fff;border:1px solid #393939;padding:14px;border-radius:4px;outline:0}.form textarea{min-height:120px;resize:vertical}.map{min-height:330px;border-radius:8px;overflow:hidden}.map iframe{width:100%;height:100%;min-height:330px;border:0}
+footer{background:#101010;color:#aaa;padding:45px 0 20px}.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:35px}.foot-grid h3{color:#fff;font:20px Georgia;margin-bottom:15px}.foot-grid a,.foot-grid p{font-size:12px;display:block;margin:8px 0}.copy{border-top:1px solid #2c2c2c;margin-top:35px;padding-top:18px;font-size:10px}
+.float-wa{position:fixed;right:20px;bottom:20px;z-index:60;background:#25d366;color:#fff;width:55px;height:55px;border-radius:50%;display:grid;place-items:center;font-size:24px;box-shadow:0 10px 25px #0003}
+.drawer-backdrop,.modal-backdrop{position:fixed;inset:0;background:#0008;z-index:100;display:none}.drawer{position:absolute;right:0;top:0;height:100%;width:min(440px,94%);background:#fff;padding:24px;overflow:auto}.drawer-backdrop.open,.modal-backdrop.open{display:block}
+.drawer-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}.drawer h2{font-size:30px}
+.cart-item{display:grid;grid-template-columns:75px 1fr auto;gap:12px;padding:15px 0;border-bottom:1px solid var(--line)}.cart-item img{width:75px;height:75px;object-fit:cover;border-radius:5px}.cart-item h4{font:15px Georgia}.cart-item p{font-size:12px;margin:4px 0}.qty{display:flex;align-items:center;gap:7px}.qty button{width:25px;height:25px;border:1px solid var(--line);background:#fff}
+.cart-total{display:flex;justify-content:space-between;font-weight:700;font-size:18px;padding:20px 0}.empty{text-align:center;color:var(--muted);padding:60px 0}
+.modal{position:absolute;inset:5% auto auto 50%;transform:translateX(-50%);width:min(900px,94%);max-height:90vh;overflow:auto;background:#fff;border-radius:10px;padding:18px}
+.close{border:1px solid var(--line);background:#fff;width:38px;height:38px;border-radius:50%;font-size:20px}
+.modal-top{display:flex;justify-content:flex-end}.product-detail{display:grid;grid-template-columns:1fr 1fr;gap:28px}.detail-image{height:510px;background:#eee;overflow:hidden;position:relative}.detail-image img{width:100%;height:100%;object-fit:contain;cursor:zoom-in;transition:transform .3s}.detail-image.zoomed img{transform:scale(1.7);cursor:zoom-out}.detail-info{padding:25px 10px}.detail-info h2{font-size:38px}.detail-info .price{font-size:22px;margin:15px 0}.detail-info p{color:var(--muted);font-size:14px;margin-bottom:22px}.modal-actions{display:flex;gap:10px}.modal-actions .btn{flex:1}
+@media(max-width:900px){nav{display:none}.menu{display:grid}.product-grid{grid-template-columns:repeat(2,1fr)}.categories{grid-template-columns:repeat(2,1fr)}.features{grid-template-columns:repeat(2,1fr)}.about-grid,.contact-grid{grid-template-columns:1fr}.about-img img{height:400px}.review-grid{grid-template-columns:1fr}.faq-grid{grid-template-columns:1fr}.foot-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.nav{height:64px}.hero{min-height:530px}.hero h1{font-size:45px}.section{padding:65px 0}.section-head{display:block}.section-head p{margin-top:12px}.product-grid{grid-template-columns:1fr 1fr;gap:9px}.card-img{height:220px}.card-body{padding:11px}.card h3{font-size:15px}.card-actions{display:block}.card-actions .btn{width:100%;margin-top:5px}.categories{grid-template-columns:1fr 1fr;gap:8px}.cat{height:250px}.features{grid-template-columns:1fr}.toolbar{display:block}.toolbar .select{margin-top:8px;width:100%}.search{width:100%}.product-detail{grid-template-columns:1fr}.detail-image{height:380px}.detail-info h2{font-size:30px}.foot-grid{grid-template-columns:1fr}.stats{gap:8px}.float-wa{right:14px;bottom:14px}}
+</style>
 </head>
 <body>
-  <div class="announce">Jai Maa Bhawani Marbles · Explore our marble collection · WhatsApp enquiries welcome</div>
-
-  <header>
-    <nav class="nav" aria-label="Main navigation">
-      <a class="brand" href="#home" aria-label="Jai Maa Bhawani Marbles home">
-        <span class="brand-mark">ॐ</span>
-        <span class="brand-name">Jai Maa Bhawani<small>Marbles</small></span>
-      </a>
-      <div class="links">
-        <a href="#home">Home</a><a href="#about">About</a><a href="#products">Products</a><a href="#why-us">Why Us</a><a href="#reviews">Reviews</a><a href="#faqs">FAQs</a><a href="#contact">Contact</a>
-      <button class="btn" id="mobileCartBtn" style="margin-top:8px">Open Cart <span id="mobileCartCount">(0)</span></button>
-      </div>
-      <div class="nav-actions">
-        <label class="search" aria-label="Search products">⌕<input id="searchInput" type="search" placeholder="Search"></label>
-        <a class="icon-btn" href="https://wa.me/919461377026" target="_blank" rel="noopener" aria-label="WhatsApp">◉</a>
-        <button class="icon-btn cart-trigger" id="cartBtn" aria-label="Open cart">🛒<span class="cart-count" id="cartCount">0</span></button>
-      </div>
-      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
-    </nav>
-    <div id="mobileMenu" style="display:none;background:#fff;border-top:1px solid var(--line);padding:10px 18px 18px">
-      <a href="#home">Home</a><a href="#about">About</a><a href="#products">Products</a><a href="#why-us">Why Us</a><a href="#reviews">Reviews</a><a href="#faqs">FAQs</a><a href="#contact">Contact</a>
-    </div>
-  </header>
-
-  <main>
-    <section class="hero" id="home">
-      <div class="hero-copy">
-        <div>
-          <div class="eyebrow">Marble · Craft · Elegance</div>
-          <h1>Timeless marble for meaningful spaces.</h1>
-          <p>Explore a refined collection of marble moortis, mandirs, fountains and pillars — presented in a clean, premium shopping experience.</p>
-          <a class="btn" href="#products">Explore Collection <span>→</span></a>
-        </div>
-      </div>
-      <div class="hero-img">
-        <div class="hero-slider" id="heroSlider">
-          <div class="hero-slide active"><img fetchpriority="high" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=82" alt="Premium marble architecture"></div>
-          <div class="hero-slide"><img src="https://images.unsplash.com/photo-1549490349-8643362247b5?auto=format&fit=crop&w=1400&q=82" alt="Marble sculpture and decor"></div>
-          <div class="hero-slide"><img src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1400&q=82" alt="Stone fountain and architectural detail"></div>
-          <div class="hero-controls">
-            <button class="hero-arrow" id="heroPrev" aria-label="Previous image">←</button>
-            <button class="hero-dot active" data-slide="0" aria-label="Slide 1"></button>
-            <button class="hero-dot" data-slide="1" aria-label="Slide 2"></button>
-            <button class="hero-dot" data-slide="2" aria-label="Slide 3"></button>
-            <button class="hero-arrow" id="heroNext" aria-label="Next image">→</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="trust-strip" aria-label="Highlights">
-      <div class="trust-item"><strong>Marble Moortis</strong><span>Browse collection</span></div>
-      <div class="trust-item"><strong>Mandirs</strong><span>Temple spaces</span></div>
-      <div class="trust-item"><strong>Fountains</strong><span>Statement pieces</span></div>
-      <div class="trust-item"><strong>Marble Pillars</strong><span>Architectural detail</span></div>
-    </div>
-
-    <section class="section" id="about">
-      <div class="about">
-        <div class="about-img"><img loading="lazy" src="https://images.unsplash.com/photo-1549490349-8643362247b5?auto=format&fit=crop&w=1000&q=78" alt="Sculptural artwork and stone detail"></div>
-        <div class="about-copy">
-          <div class="eyebrow">About the collection</div>
-          <h2>Stone with presence. Details with purpose.</h2>
-          <p>Jai Maa Bhawani Marbles brings together a focused marble collection for homes, temples, gardens and architectural spaces. Browse by category, open any piece for a closer look, and enquire directly.</p>
-          <div class="about-points">
-            <div class="about-point"><b>Curated collection</b>Marble pieces presented in a simple, visual catalogue.</div>
-            <div class="about-point"><b>Direct enquiry</b>Connect through WhatsApp for product questions.</div>
-            <div class="about-point"><b>Easy browsing</b>Page-by-page product discovery with a working shopping cart.</div>
-            <div class="about-point"><b>Made for spaces</b>Pieces for devotional and architectural settings.</div>
-          </div>
-          <a class="btn alt" href="#contact">Make an enquiry →</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="why" id="why-us">
-      <div class="why-inner">
-        <div class="section-head"><div><div class="eyebrow">Why explore with us</div><h2>A simpler way to discover marble.</h2></div><p>Every important detail is kept close at hand, from categories and product discovery to quick enquiries.</p></div>
-        <div class="why-grid">
-          <article class="why-card"><div class="num">01</div><h3>Visual catalogue</h3><p>Large product imagery makes it easy to scan the collection and compare styles.</p></article>
-          <article class="why-card"><div class="num">02</div><h3>Quick enquiry</h3><p>Add products to your cart and send the complete order to WhatsApp for confirmation.</p></article>
-          <article class="why-card"><div class="num">03</div><h3>Responsive design</h3><p>The layout adapts for phones, tablets and large screens with lightweight interactions.</p></article>
-          <article class="why-card"><div class="num">04</div><h3>Easy discovery</h3><p>Use categories, search and the second product page to explore more pieces.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="collection">
-      <div class="section-head"><div><div class="eyebrow">Explore by category</div><h2>Find your piece.</h2></div><p>Start with the type of marble product you are looking for.</p></div>
-      <div class="categories">
-        <a class="cat" href="#products" data-filter="Moortis"><img loading="lazy" src="https://images.unsplash.com/photo-1549490349-8643362247b5?auto=format&fit=crop&w=800&q=75" alt="Marble moortis"><div class="cat-label"><span>01</span><h3>Moortis</h3></div></a>
-        <a class="cat" href="#products" data-filter="Mandirs"><img loading="lazy" src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=75" alt="Mandir inspired interior"><div class="cat-label"><span>02</span><h3>Mandirs</h3></div></a>
-        <a class="cat" href="#products" data-filter="Fountains"><img loading="lazy" src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=800&q=75" alt="Architectural fountain setting"><div class="cat-label"><span>03</span><h3>Fountains</h3></div></a>
-        <a class="cat" href="#products" data-filter="Pillars"><img loading="lazy" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=75" alt="Marble architectural detail"><div class="cat-label"><span>04</span><h3>Pillars</h3></div></a>
-      </div>
-    </section>
-
-    <section class="section products-wrap" id="products">
-      <div class="section-head"><div><div class="eyebrow">The collection</div><h2>Featured products.</h2></div><p>Shop the collection with transparent sample pricing, add products to your cart, or enquire directly on WhatsApp.</p></div>
-      <div class="toolbar"><div class="count" id="count">12 products</div><select class="sort" id="sort"><option value="featured">Featured</option><option value="az">Name A–Z</option><option value="za">Name Z–A</option></select></div>
-
-      <div class="page-panel active" id="page1"><div class="product-grid" id="grid1"></div></div>
-      <div class="page-panel" id="page2"><div class="product-grid" id="grid2"></div></div>
-
-      <div class="pager" aria-label="Product pages">
-        <button class="page-btn active" data-page="1">1</button><button class="page-btn" data-page="2">2</button>
-      </div>
-    </section>
-
-    <section class="feature-band">
-      <div class="feature-inner"><h2>Looking for something specific?</h2><p>Tell us what you are looking for, share a product screenshot or ask about a category. You can also add products to your cart and send the order to WhatsApp. <br><br><a class="btn" href="https://wa.me/919461377026?text=Hello%20Jai%20Maa%20Bhawani%20Marbles%2C%20I%20would%20like%20to%20enquire%20about%20your%20marble%20collection." target="_blank" rel="noopener">WhatsApp us →</a></p></div>
-    </section>
-
-    <section class="section reviews" id="reviews">
-      <div class="section-head"><div><div class="eyebrow">Reviews</div><h2>Customer words.</h2></div><p>Replace these placeholders with your verified customer reviews before publishing.</p></div>
-      <div class="review-grid">
-        <article class="review"><div class="stars">★★★★★</div><p>“Add a verified customer review here — ideally describing the product, service and buying experience.”</p><small>Verified customer · Replace this text</small></article>
-        <article class="review"><div class="stars">★★★★★</div><p>“Add another genuine customer experience here to build trust with future visitors.”</p><small>Verified customer · Replace this text</small></article>
-        <article class="review"><div class="stars">★★★★★</div><p>“Use this space for a short, authentic review about a marble product or enquiry experience.”</p><small>Verified customer · Replace this text</small></article>
-      </div>
-    </section>
-
-    <section class="section" id="faqs">
-      <div class="section-head"><div><div class="eyebrow">FAQs</div><h2>Questions, answered.</h2></div><p>Helpful basics for visitors before they enquire.</p></div>
-      <div class="faq-grid">
-        <div class="faq"><button>How can I enquire about a product?<span>＋</span></button><div class="faq-content">Open a product to zoom the image, read its description and price, add it to your cart, or send a direct WhatsApp enquiry.</div></div>
-        <div class="faq"><button>Can I ask for more product photos?<span>＋</span></button><div class="faq-content">Yes. Use WhatsApp to request additional photos or details for the piece you are interested in.</div></div>
-        <div class="faq"><button>Do you have marble moortis and mandirs?<span>＋</span></button><div class="faq-content">The catalogue includes sections for marble moortis and mandirs, along with fountains and marble pillars.</div></div>
-        <div class="faq"><button>Is there online checkout?<span>＋</span></button><div class="faq-content">Yes. Add products to the cart, adjust quantities, and use WhatsApp checkout to send the order for confirmation.</div></div>
-        <div class="faq"><button>How do I see more products?<span>＋</span></button><div class="faq-content">Use the numbered pagination below the product grid to move from page 1 to page 2 and discover the rest of the catalogue.</div></div>
-        <div class="faq"><button>Can I view the website on mobile?<span>＋</span></button><div class="faq-content">Yes. The layout, navigation, images, product grid and enquiry actions are responsive for mobile, tablet and desktop.</div></div>
-      </div>
-    </section>
-
-    <section class="section" id="contact">
-      <div class="section-head"><div><div class="eyebrow">Contact & enquiry</div><h2>Let’s talk marble.</h2></div><p>Send a quick enquiry or use WhatsApp for a direct conversation.</p></div>
-      <div class="contact">
-        <form class="contact-form" id="enquiryForm">
-          <input class="field" id="name" required placeholder="Your name">
-          <input class="field" id="phone" placeholder="Phone number">
-          <input class="field" id="interest" placeholder="Product / category">
-          <textarea class="field" id="message" required placeholder="Tell us what you are looking for..."></textarea>
-          <button class="btn" type="submit">Send enquiry on WhatsApp →</button>
-        </form>
-        <div>
-          <iframe class="map" title="Map placeholder for Rajasthan" loading="lazy" src="https://www.google.com/maps?q=Jaipur%2C%20Rajasthan%2C%20India&output=embed"></iframe>
-          <p style="font-size:10px;color:var(--muted);margin:9px 0 0">Map location is a temporary Jaipur, Rajasthan placeholder and can be replaced with the actual business location.</p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-top">
-        <div><div class="footer-brand">Jai Maa Bhawani Marbles</div><p>Marble moortis · Mandirs · Fountains · Pillars</p><p><a href="https://wa.me/919461377026" target="_blank" rel="noopener">WhatsApp: +91 94613 77026</a></p></div>
-        <div><h4>Quick links</h4><a href="#home">Home</a><a href="#about">About</a><a href="#products">Our Products</a><a href="#contact">Contact</a></div>
-        <div><h4>Our collection</h4><a href="#products">Moortis</a><a href="#products">Mandirs</a><a href="#products">Fountains</a><a href="#products">Marble Pillars</a></div>
-        <div><h4>Stay in touch</h4><p>Use WhatsApp for product enquiries and questions.</p><div class="newsletter"><input id="email" type="email" placeholder="Your email"><button id="emailBtn" type="button">→</button></div></div>
-      </div>
-      <div class="footer-bottom"><span>© <span id="year"></span> Jai Maa Bhawani Marbles</span><span>Privacy · Terms · Enquiry</span></div>
-    </div>
-  </footer>
-
-  <a class="whatsapp" href="https://wa.me/919461377026?text=Hello%20Jai%20Maa%20Bhawani%20Marbles%2C%20I%20would%20like%20to%20enquire%20about%20your%20products." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">◉</a>
-  <div class="toast" id="toast"></div>
-
-  <div class="modal" id="modal" aria-hidden="true">
-    <div class="modal-box">
-      <button class="close" id="closeModal" aria-label="Close">×</button>
-      <div class="modal-media" id="modalMedia">
-        <img id="modalImg" class="zoomable" src="" alt="">
-        <div class="zoom-hint">Click image to zoom</div>
-      </div>
-      <div class="modal-copy">
-        <div class="eyebrow" id="modalCategory"></div>
-        <h2 id="modalTitle" style="font-size:36px;margin-bottom:8px"></h2>
-        <div class="modal-price" id="modalPrice"></div>
-        <div class="meta" id="modalMeta"></div>
-        <p id="modalText" style="color:var(--muted);font-size:13px"></p>
-        <ul><li>Premium marble finish</li><li>Suitable for devotional, garden or architectural spaces</li><li>Dimensions and availability confirmed before order</li></ul>
-        <div class="modal-actions">
-          <button id="modalCart" class="btn">Add to Cart</button>
-          <a id="modalWA" class="btn alt" href="#" target="_blank" rel="noopener">WhatsApp →</a>
-        </div>
-      </div>
+<div class="topbar">Premium Marble Collection · Direct Enquiries & Orders on WhatsApp</div>
+<header>
+  <div class="container nav">
+    <a class="logo" href="#home">Jai Maa Bhawani Marbles<span>MARBLE COLLECTION</span></a>
+    <nav><a href="#home">Home</a><a href="#about">About</a><a href="#products">Products</a><a href="#why">Why Us</a><a href="#reviews">Reviews</a><a href="#contact">Contact</a></nav>
+    <div class="nav-actions">
+      <button class="icon-btn menu" onclick="toggleMenu()" aria-label="Menu">☰</button>
+      <button class="icon-btn" onclick="openCart()" aria-label="Cart">🛒<span id="cartCount" class="cart-count">0</span></button>
     </div>
   </div>
+</header>
+<div id="mobileMenu" style="display:none;background:#fff;border-bottom:1px solid var(--line);padding:12px 5%;">
+  <a href="#home" onclick="toggleMenu()">Home</a> · <a href="#products" onclick="toggleMenu()">Products</a> · <a href="#about" onclick="toggleMenu()">About</a> · <a href="#contact" onclick="toggleMenu()">Contact</a>
+</div>
 
-  <div class="cart-drawer" id="cartDrawer" aria-hidden="true">
-    <div class="cart-overlay" id="cartOverlay"></div>
-    <aside class="cart-panel" aria-label="Shopping cart">
-      <div class="cart-head"><h3>Your Cart</h3><button class="cart-close" id="cartClose" aria-label="Close cart">×</button></div>
-      <div class="cart-items" id="cartItems"></div>
-      <div class="cart-footer">
-        <div class="cart-total"><span>Total</span><span id="cartTotal">₹0</span></div>
-        <button class="checkout" id="checkoutBtn">Checkout on WhatsApp</button>
-      </div>
-    </aside>
+<section id="home" class="hero">
+  <div class="slide active"><img src="https://images.unsplash.com/photo-1601058268499-e52658b8bb88?auto=format&fit=crop&w=1800&q=82" alt="Marble statue"></div>
+  <div class="slide"><img src="https://images.unsplash.com/photo-1604881991720-f91add269bed?auto=format&fit=crop&w=1800&q=82" alt="Marble architecture"></div>
+  <div class="slide"><img src="https://images.unsplash.com/photo-1564399579883-451a5d44ec08?auto=format&fit=crop&w=1800&q=82" alt="Stone craftsmanship"></div>
+  <div class="hero-content"><div class="container"><div class="hero-copy">
+    <div class="kicker">Jai Maa Bhawani Marbles</div>
+    <h1>Timeless beauty, carved in marble.</h1>
+    <p>Explore a curated collection of marble moortis, mandirs, fountains and pillars for spaces that deserve a distinctive finish.</p>
+    <a class="btn light" href="#products">Explore Collection →</a>
+  </div></div></div>
+  <div class="dots" id="dots"><button class="dot active" onclick="goSlide(0)"></button><button class="dot" onclick="goSlide(1)"></button><button class="dot" onclick="goSlide(2)"></button></div>
+</section>
+
+<section id="about" class="section about"><div class="container about-grid">
+  <div class="about-img"><img loading="lazy" src="https://images.unsplash.com/photo-1549490349-8643362247b5?auto=format&fit=crop&w=1000&q=80" alt="Marble craftsmanship"></div>
+  <div class="about-copy"><div class="eyebrow">Our Story</div><h2>Crafted to become part of your space.</h2>
+  <p>Jai Maa Bhawani Marbles brings together decorative marble pieces designed for homes, temples, entrances, gardens and architectural spaces.</p>
+  <p>Browse the collection, open any product for a larger view and detailed description, then add what you like to your cart.</p>
+  <div class="stats"><div class="stat"><b>01</b><span>Marble Moortis</span></div><div class="stat"><b>02</b><span>Mandirs</span></div><div class="stat"><b>03</b><span>Fountains & Pillars</span></div></div>
   </div>
+</div></section>
 
-  <script>
-    const WA = "919461377026";
-    const products = [
-      {id:1,name:"Classic White Marble Murti",cat:"Moortis",price:12500,img:"https://images.unsplash.com/photo-1549490349-8643362247b5?auto=format&fit=crop&w=900&q=82",desc:"A graceful white marble devotional piece with a clean sculptural finish. Ideal for a home temple, prayer room or display space."},
-      {id:2,name:"Elegant Marble Mandir",cat:"Mandirs",price:48500,img:"https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=82",desc:"A refined marble mandir concept with architectural detailing for a serene devotional setting."},
-      {id:3,name:"Marble Garden Fountain",cat:"Fountains",price:36500,img:"https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=900&q=82",desc:"A statement fountain concept designed to add a calm, sculptural focal point to gardens and outdoor spaces."},
-      {id:4,name:"Carved Marble Pillar",cat:"Pillars",price:18900,img:"https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=82",desc:"Decorative marble pillar styling with carved architectural character for entrances, temples and interiors."},
-      {id:5,name:"Meditation Marble Murti",cat:"Moortis",price:14900,img:"https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?auto=format&fit=crop&w=900&q=82",desc:"A serene marble figure designed as a visual centrepiece for a devotional or peaceful interior."},
-      {id:6,name:"Temple Entrance Mandir",cat:"Mandirs",price:62500,img:"https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=900&q=82",desc:"A grand mandir-inspired design with a strong architectural silhouette and marble detailing."},
-      {id:7,name:"Classic Courtyard Fountain",cat:"Fountains",price:42900,img:"https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=900&q=82",desc:"An elegant courtyard fountain concept for a premium outdoor or garden installation."},
-      {id:8,name:"Fluted Marble Pillar",cat:"Pillars",price:21900,img:"https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=82",desc:"A fluted architectural pillar concept with a timeless stone aesthetic."},
-      {id:9,name:"White Marble Figure",cat:"Moortis",price:15900,img:"https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?auto=format&fit=crop&w=900&q=82",desc:"A classic white marble figure with an elegant silhouette and versatile display appeal."},
-      {id:10,name:"Classic Home Mandir",cat:"Mandirs",price:39500,img:"https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?auto=format&fit=crop&w=900&q=82",desc:"A compact home mandir concept designed for modern devotional spaces."},
-      {id:11,name:"Pedestal Fountain",cat:"Fountains",price:33500,img:"https://images.unsplash.com/photo-1598902108854-10e335adac99?auto=format&fit=crop&w=900&q=82",desc:"A pedestal fountain concept that brings decorative stone character to a garden or entrance."},
-      {id:12,name:"Architectural Marble Column",cat:"Pillars",price:24900,img:"https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=82",desc:"A clean architectural marble column concept for decorative and structural-inspired applications."}
-    ];
-    let currentProducts=[...products], currentPage=1, perPage=8;
-    const $=s=>document.querySelector(s), $$=s=>document.querySelectorAll(s);
-    function waLink(p){return `https://wa.me/${WA}?text=${encodeURIComponent(`Hello Jai Maa Bhawani Marbles, I would like to enquire about: ${p.name} (${p.cat}).`)}`}
-    const money = n => new Intl.NumberFormat("en-IN",{style:"currency",currency:"INR",maximumFractionDigits:0}).format(n);
-    let cart = JSON.parse(localStorage.getItem("jmb-cart") || "[]");
+<section id="why" class="section"><div class="container">
+  <div class="section-head"><div><div class="eyebrow">Why Us</div><h2>Made for lasting impressions.</h2></div><p>A simple shopping experience with clear product information and direct order assistance.</p></div>
+  <div class="features">
+    <div class="feature"><div class="feature-icon">◈</div><strong>Marble Craft</strong><p>Decorative pieces presented with large, detailed product photography.</p></div>
+    <div class="feature"><div class="feature-icon">◇</div><strong>Easy Shopping</strong><p>View products, zoom into details, choose quantity and add to cart.</p></div>
+    <div class="feature"><div class="feature-icon">✦</div><strong>Direct Enquiry</strong><p>Send your cart or individual product enquiry directly through WhatsApp.</p></div>
+    <div class="feature"><div class="feature-icon">⌁</div><strong>Responsive</strong><p>Designed to work smoothly across mobile, tablet and desktop screens.</p></div>
+  </div>
+</div></section>
 
-    function saveCart(){
-      localStorage.setItem("jmb-cart",JSON.stringify(cart));
-      updateCart();
-    }
-    function cartQty(){ return cart.reduce((sum,item)=>sum+item.qty,0); }
-    function addToCart(product,qty=1){
-      const found=cart.find(i=>i.id===product.id);
-      if(found) found.qty+=qty; else cart.push({id:product.id,qty});
-      saveCart();
-      showToast(`${product.name} added to cart`);
-    }
-    function changeQty(id,delta){
-      const item=cart.find(i=>i.id===id);
-      if(!item)return;
-      item.qty+=delta;
-      if(item.qty<=0) cart=cart.filter(i=>i.id!==id);
-      saveCart();
-    }
-    function removeFromCart(id){ cart=cart.filter(i=>i.id!==id); saveCart(); }
+<section class="section" style="padding-top:0"><div class="container">
+ <div class="section-head"><div><div class="eyebrow">Shop by category</div><h2>Explore the collection.</h2></div></div>
+ <div class="categories">
+  <a class="cat" href="#products" onclick="filterCat('Moortis')"><img loading="lazy" src="https://images.unsplash.com/photo-1601058268499-e52658b8bb88?auto=format&fit=crop&w=700&q=78"><div class="cat-text"><h3>Marble Moortis</h3><p>View collection →</p></div></a>
+  <a class="cat" href="#products" onclick="filterCat('Mandirs')"><img loading="lazy" src="https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?auto=format&fit=crop&w=700&q=78"><div class="cat-text"><h3>Mandirs</h3><p>View collection →</p></div></a>
+  <a class="cat" href="#products" onclick="filterCat('Fountains')"><img loading="lazy" src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=700&q=78"><div class="cat-text"><h3>Fountains</h3><p>View collection →</p></div></a>
+  <a class="cat" href="#products" onclick="filterCat('Pillars')"><img loading="lazy" src="https://images.unsplash.com/photo-1549490349-8643362247b5?auto=format&fit=crop&w=700&q=78"><div class="cat-text"><h3>Marble Pillars</h3><p>View collection →</p></div></a>
+ </div>
+</div></section>
 
-    function updateCart(){
-      const qty=cartQty();
-      $("#cartCount").textContent=qty;
-      $("#mobileCartCount").textContent=`(${qty})`;
-      const box=$("#cartItems");
-      if(!cart.length){
-        box.innerHTML='<div class="empty-cart">Your cart is empty.<br>Add products to start your order.</div>';
-        $("#cartTotal").textContent=money(0);
-        $("#checkoutBtn").disabled=true;
-        return;
-      }
-      $("#checkoutBtn").disabled=false;
-      let total=0;
-      box.innerHTML=cart.map(item=>{
-        const p=products.find(x=>x.id===item.id);
-        if(!p)return "";
-        total+=p.price*item.qty;
-        return `<div class="cart-item">
-          <img src="${p.img}" alt="${p.name}" loading="lazy">
-          <div><h4>${p.name}</h4><p>${money(p.price)} each</p>
-            <div class="qty"><button data-minus="${p.id}">−</button><strong>${item.qty}</strong><button data-plus="${p.id}">+</button></div>
-            <button class="remove" data-remove="${p.id}">Remove</button>
-          </div>
-          <strong>${money(p.price*item.qty)}</strong>
-        </div>`;
-      }).join("");
-      $("#cartTotal").textContent=money(total);
-      box.querySelectorAll("[data-minus]").forEach(b=>b.onclick=()=>changeQty(+b.dataset.minus,-1));
-      box.querySelectorAll("[data-plus]").forEach(b=>b.onclick=()=>changeQty(+b.dataset.plus,1));
-      box.querySelectorAll("[data-remove]").forEach(b=>b.onclick=()=>removeFromCart(+b.dataset.remove));
-    }
+<section id="products" class="section products"><div class="container">
+ <div class="section-head"><div><div class="eyebrow">The Collection</div><h2>Featured marble products.</h2></div><p>Click any product to zoom into the image and read its description.</p></div>
+ <div class="toolbar"><input id="search" class="search" placeholder="Search products..." oninput="renderProducts()"><select id="sort" class="select" onchange="renderProducts()"><option value="featured">Featured</option><option value="low">Price: Low to High</option><option value="high">Price: High to Low</option></select></div>
+ <div id="productGrid" class="product-grid"></div>
+ <div id="pagination" class="pagination"></div>
+</div></section>
 
-    function openCart(){
-      $("#cartDrawer").classList.add("open");
-      $("#cartDrawer").setAttribute("aria-hidden","false");
-      updateCart();
-    }
-    function closeCart(){
-      $("#cartDrawer").classList.remove("open");
-      $("#cartDrawer").setAttribute("aria-hidden","true");
-    }
+<section id="reviews" class="section reviews"><div class="container">
+ <div class="section-head"><div><div class="eyebrow">Reviews</div><h2>What customers say.</h2></div></div>
+ <div class="review-grid">
+  <article class="review"><div class="stars">★★★★★</div><p>“The product presentation is beautiful and the enquiry process was very straightforward.”</p><small>— Customer review</small></article>
+  <article class="review"><div class="stars">★★★★★</div><p>“The marble finish and detailing made the piece stand out in our space.”</p><small>— Customer review</small></article>
+  <article class="review"><div class="stars">★★★★★</div><p>“Easy to browse on mobile and quick to ask about a product on WhatsApp.”</p><small>— Customer review</small></article>
+ </div>
+</div></section>
 
-    function checkoutWhatsApp(){
-      if(!cart.length)return;
-      let total=0;
-      const lines=cart.map(item=>{
-        const p=products.find(x=>x.id===item.id);
-        total+=p.price*item.qty;
-        return `• ${p.name} — Qty ${item.qty} — ${money(p.price*item.qty)}`;
-      });
-      const message=`Hello Jai Maa Bhawani Marbles,%0A%0AI would like to place an order:%0A${encodeURIComponent(lines.join("\n"))}%0A%0AEstimated total: ${encodeURIComponent(money(total))}%0A%0APlease confirm availability, final pricing, dimensions and delivery details.`;
-      window.open(`https://wa.me/${WA}?text=${message}`,"_blank","noopener");
-    }
+<section class="section"><div class="container">
+ <div class="section-head"><div><div class="eyebrow">FAQs</div><h2>Questions, answered.</h2></div></div>
+ <div class="faq-grid">
+  <div class="faq"><button onclick="faq(this)">Can I order a product from the website? <span>+</span></button><div class="faq-content">Yes. Add products to your cart, choose quantities, and use the WhatsApp order button to send the order details for confirmation.</div></div>
+  <div class="faq"><button onclick="faq(this)">Can I see a larger product image? <span>+</span></button><div class="faq-content">Yes. Click any product card to open its detail view. Click the large image to zoom in and out.</div></div>
+  <div class="faq"><button onclick="faq(this)">How do I ask about a product? <span>+</span></button><div class="faq-content">Use the WhatsApp button on an individual product or send your complete cart through WhatsApp.</div></div>
+  <div class="faq"><button onclick="faq(this)">Are the prices final? <span>+</span></button><div class="faq-content">The displayed prices are website catalogue values. Confirm the final price, availability, specifications and delivery details with Jai Maa Bhawani Marbles before purchase.</div></div>
+ </div>
+</div></section>
 
-    function showToast(msg){
-      $("#toast").textContent=msg;$("#toast").classList.add("show");
-      clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>$("#toast").classList.remove("show"),2200);
-    }
+<section id="contact" class="section contact"><div class="container contact-grid">
+ <div><div class="eyebrow">Enquiry</div><h2>Have something specific in mind?</h2><p>Send an enquiry and our team can continue the conversation on WhatsApp.</p>
+  <form class="form" onsubmit="sendEnquiry(event)"><input id="name" required placeholder="Your name"><input id="phone" placeholder="Phone number"><input id="interest" placeholder="Product / requirement"><textarea id="message" placeholder="Tell us what you are looking for"></textarea><button class="btn light">Send Enquiry on WhatsApp →</button></form>
+ </div>
+ <div><div class="eyebrow">Find Us</div><h2 style="font-size:30px;margin-bottom:18px">Rajasthan, India</h2><div class="map"><iframe loading="lazy" src="https://www.google.com/maps?q=Jaipur%2C%20Rajasthan%2C%20India&output=embed" title="Map placeholder"></iframe></div></div>
+</div></section>
 
-    function render(){
-      $("#count").textContent=`${currentProducts.length} products`;
-      [$("#grid1"),$("#grid2")].forEach(g=>g.innerHTML="");
-      currentProducts.forEach((p,i)=>{
-        const card=document.createElement("article"); card.className="product-card";
-        card.innerHTML=`<div class="product-image">
-          <span class="badge">${p.cat}</span>
-          <img loading="lazy" src="${p.img}" alt="${p.name}">
-          <button class="quick" data-index="${i}">View & Zoom</button>
-        </div>
-        <div class="product-info">
-          <h3>${p.name}</h3>
-          <div class="meta">${p.cat} · Premium marble</div>
-          <div class="price">${money(p.price)}</div>
-          <div class="price-note">Sample catalogue price · confirm final quote</div>
-          <div class="product-actions">
-            <button class="add-cart" data-cart="${i}">Add to Cart</button>
-            <button class="buy-now" data-buy="${i}">Buy Now</button>
-          </div>
-        </div>`;
-        (i<perPage?$("#grid1"):$("#grid2")).appendChild(card);
-      });
-      $$(".quick").forEach(b=>b.onclick=()=>openModal(currentProducts[+b.dataset.index]));
-      $$(".add-cart").forEach(b=>b.onclick=()=>addToCart(currentProducts[+b.dataset.cart]));
-      $$(".buy-now").forEach(b=>b.onclick=()=>{addToCart(currentProducts[+b.dataset.buy]);openCart()});
-    }
-    function setPage(n){
-      currentPage=n;
-      $$(".page-panel").forEach(x=>x.classList.remove("active"));
-      $(`#page${n}`).classList.add("active");
-      $$(".page-btn").forEach(x=>x.classList.toggle("active",+x.dataset.page===n));
-      document.querySelector("#products").scrollIntoView({behavior:"smooth",block:"start"});
-    }
-    $$(".page-btn").forEach(b=>b.onclick=()=>setPage(+b.dataset.page));
-    $("#sort").onchange=e=>{
-      currentProducts=[...products];
-      if(e.target.value==="az") currentProducts.sort((a,b)=>a.name.localeCompare(b.name));
-      if(e.target.value==="za") currentProducts.sort((a,b)=>b.name.localeCompare(a.name));
-      render(); setPage(1);
-    };
-    $("#searchInput").oninput=e=>{
-      const q=e.target.value.toLowerCase().trim();
-      currentProducts=products.filter(p=>(p.name+" "+p.cat).toLowerCase().includes(q));
-      render(); setPage(1);
-    };
-    $$(".cat").forEach(c=>c.onclick=()=>{const f=c.dataset.filter; $("#searchInput").value=f; currentProducts=products.filter(p=>p.cat===f); render(); setPage(1)});
-    $$(".faq button").forEach(b=>b.onclick=()=>b.parentElement.classList.toggle("open"));
-    $("#menuBtn").onclick=()=>{const m=$("#mobileMenu");m.style.display=m.style.display==="none"?"grid":"none";m.style.gap="12px";$$('#mobileMenu a').forEach(a=>a.style.padding="8px 0")};
-    $$('a[href^="#"]').forEach(a=>a.addEventListener("click",()=>{if($("#mobileMenu"))$("#mobileMenu").style.display="none"}));
-    function openModal(p){
-      $("#modalImg").src=p.img;$("#modalImg").alt=p.name;
-      $("#modalCategory").textContent=p.cat;
-      $("#modalTitle").textContent=p.name;
-      $("#modalPrice").textContent=money(p.price);
-      $("#modalMeta").textContent="Sample catalogue price · final quote confirmed before order";
-      $("#modalText").textContent=p.desc;
-      $("#modalWA").href=waLink(p);
-      $("#modalCart").onclick=()=>addToCart(p);
-      $("#modalMedia").classList.remove("zoomed");
-      $("#modal").classList.add("show");
-      $("#modal").setAttribute("aria-hidden","false");
-    }
-    function closeModal(){$("#modal").classList.remove("show");$("#modal").setAttribute("aria-hidden","true")}
-    $("#closeModal").onclick=closeModal;$("#modal").onclick=e=>{if(e.target.id==="modal")closeModal()};document.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal()});
-    $("#enquiryForm").onsubmit=e=>{
-      e.preventDefault();
-      const text=`Hello Jai Maa Bhawani Marbles,%0A%0AName: ${encodeURIComponent($("#name").value)}%0APhone: ${encodeURIComponent($("#phone").value)}%0AProduct/category: ${encodeURIComponent($("#interest").value)}%0AEnquiry: ${encodeURIComponent($("#message").value)}`;
-      window.open(`https://wa.me/${WA}?text=${text}`,"_blank");
-    };
-    $("#emailBtn").onclick=()=>{ $("#toast").textContent="Email signup is a visual placeholder — connect your email service before launch.";$("#toast").classList.add("show");setTimeout(()=>$("#toast").classList.remove("show"),2800)};
-    $("#year").textContent=new Date().getFullYear();
+<footer><div class="container"><div class="foot-grid">
+ <div><h3>Jai Maa Bhawani Marbles</h3><p>Premium marble moortis, mandirs, fountains and pillars.</p></div>
+ <div><h3>Quick Links</h3><a href="#about">About</a><a href="#products">Products</a><a href="#why">Why Us</a><a href="#contact">Contact</a></div>
+ <div><h3>Contact</h3><a href="https://wa.me/919461377026" target="_blank">WhatsApp: +91 94613 77026</a><a href="#contact">Send an enquiry</a></div>
+ </div><div class="copy">© <span id="year"></span> Jai Maa Bhawani Marbles. All rights reserved.</div></div></footer>
+<a class="float-wa" href="https://wa.me/919461377026?text=Hello%20Jai%20Maa%20Bhawani%20Marbles%2C%20I%20would%20like%20to%20make%20an%20enquiry." target="_blank" aria-label="WhatsApp">◉</a>
 
-    // Hero slider
-    let heroIndex=0;
-    const heroSlides=$$(".hero-slide"), heroDots=$$(".hero-dot");
-    function showHero(n){
-      heroIndex=(n+heroSlides.length)%heroSlides.length;
-      heroSlides.forEach((s,i)=>s.classList.toggle("active",i===heroIndex));
-      heroDots.forEach((d,i)=>d.classList.toggle("active",i===heroIndex));
-    }
-    $("#heroPrev").onclick=()=>showHero(heroIndex-1);
-    $("#heroNext").onclick=()=>showHero(heroIndex+1);
-    heroDots.forEach(d=>d.onclick=()=>showHero(+d.dataset.slide));
-    let heroTimer=setInterval(()=>showHero(heroIndex+1),5000);
-    $("#heroSlider").addEventListener("mouseenter",()=>clearInterval(heroTimer));
-    $("#heroSlider").addEventListener("mouseleave",()=>heroTimer=setInterval(()=>showHero(heroIndex+1),5000));
+<div id="cartBackdrop" class="drawer-backdrop" onclick="closeCart()"><aside class="drawer" onclick="event.stopPropagation()">
+ <div class="drawer-head"><h2>Your Cart</h2><button class="close" onclick="closeCart()">×</button></div>
+ <div id="cartItems"></div><div id="cartFooter"></div>
+</aside></div>
 
-    // Cart drawer
-    $("#cartBtn").onclick=openCart;
-    $("#mobileCartBtn").onclick=()=>{openCart();$("#mobileMenu").style.display="none"};
-    $("#cartClose").onclick=closeCart;
-    $("#cartOverlay").onclick=closeCart;
-    $("#checkoutBtn").onclick=checkoutWhatsApp;
+<div id="modalBackdrop" class="modal-backdrop" onclick="closeModal()"><div class="modal" onclick="event.stopPropagation()">
+ <div class="modal-top"><button class="close" onclick="closeModal()">×</button></div><div id="modalContent"></div>
+</div></div>
 
-    // Zoom image in product modal
-    $("#modalImg").onclick=()=>$("#modalMedia").classList.toggle("zoomed");
+<script>
+const WA="919461377026";
+const products=[
+{id:1,name:"Classic White Marble Moorti",cat:"Moortis",price:18500,img:"https://images.unsplash.com/photo-1601058268499-e52658b8bb88?auto=format&fit=crop&w=900&q=82",desc:"A refined marble devotional sculpture with a clean white stone appearance, detailed carving and a timeless display profile."},
+{id:2,name:"Elegant Temple Mandir",cat:"Mandirs",price:42500,img:"https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?auto=format&fit=crop&w=900&q=82",desc:"A decorative marble mandir concept designed as a statement piece for a prayer room or home temple setting."},
+{id:3,name:"Garden Marble Fountain",cat:"Fountains",price:32500,img:"https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=900&q=82",desc:"A classical decorative fountain concept for gardens, entrances and outdoor spaces, presented with an elegant stone aesthetic."},
+{id:4,name:"Carved Marble Pillar",cat:"Pillars",price:16000,img:"https://images.unsplash.com/photo-1549490349-8643362247b5?auto=format&fit=crop&w=900&q=82",desc:"A decorative carved pillar concept suitable for architectural accents, entrances and feature spaces."},
+{id:5,name:"Premium Ganesh Marble Moorti",cat:"Moortis",price:22000,img:"https://images.unsplash.com/photo-1601058268499-e52658b8bb88?auto=format&fit=crop&w=900&q=82",desc:"A premium devotional marble sculpture concept with a detailed ornamental finish."},
+{id:6,name:"Compact Home Mandir",cat:"Mandirs",price:28500,img:"https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?auto=format&fit=crop&w=900&q=82",desc:"A compact marble home-temple design concept intended for elegant indoor placement."},
+{id:7,name:"Lotus Marble Fountain",cat:"Fountains",price:38500,img:"https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=900&q=82",desc:"A decorative lotus-inspired fountain concept with a graceful stone silhouette."},
+{id:8,name:"Ornamental Entrance Pillar",cat:"Pillars",price:19500,img:"https://images.unsplash.com/photo-1549490349-8643362247b5?auto=format&fit=crop&w=900&q=82",desc:"An architectural marble pillar concept intended to add a classic ornamental character to entrances."},
+{id:9,name:"Meditation Marble Moorti",cat:"Moortis",price:24000,img:"https://images.unsplash.com/photo-1601058268499-e52658b8bb88?auto=format&fit=crop&w=900&q=82",desc:"A serene devotional sculpture concept with a calm, polished marble presentation."},
+{id:10,name:"Grand Marble Mandir",cat:"Mandirs",price:58500,img:"https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?auto=format&fit=crop&w=900&q=82",desc:"A larger statement mandir concept with decorative architectural proportions."},
+{id:11,name:"Classic Tier Fountain",cat:"Fountains",price:45000,img:"https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=900&q=82",desc:"A tiered decorative fountain concept for a garden, courtyard or entrance feature."},
+{id:12,name:"Heritage Carved Pillar",cat:"Pillars",price:26000,img:"https://images.unsplash.com/photo-1549490349-8643362247b5?auto=format&fit=crop&w=900&q=82",desc:"A heritage-inspired ornamental pillar concept with a strong architectural presence."}
+];
+let page=1, perPage=8, activeCat="All";
+let cart=JSON.parse(localStorage.getItem("jmb_cart")||"[]");
 
-    updateCart();
-    render();
-  </script>
+function money(n){return "₹"+n.toLocaleString("en-IN")}
+function filtered(){
+ let q=(document.getElementById("search")?.value||"").toLowerCase();
+ let arr=products.filter(p=>(activeCat==="All"||p.cat===activeCat)&&(p.name+" "+p.cat).toLowerCase().includes(q));
+ let s=document.getElementById("sort")?.value;
+ if(s==="low")arr.sort((a,b)=>a.price-b.price); if(s==="high")arr.sort((a,b)=>b.price-a.price);
+ return arr;
+}
+function renderProducts(){
+ let arr=filtered(), pages=Math.max(1,Math.ceil(arr.length/perPage)); if(page>pages)page=pages;
+ let slice=arr.slice((page-1)*perPage,page*perPage);
+ document.getElementById("productGrid").innerHTML=slice.map(p=>`
+ <article class="card">
+  <div class="card-img" onclick="openProduct(${p.id})"><img loading="lazy" src="${p.img}" alt="${p.name}"><span class="badge">${p.cat}</span><span class="zoom-hint">⌕</span></div>
+  <div class="card-body"><div class="card-cat">${p.cat}</div><h3>${p.name}</h3><div class="price">${money(p.price)}</div>
+  <div class="card-actions"><button class="btn outline" onclick="openProduct(${p.id})">View</button><button class="btn" onclick="addCart(${p.id})">Add to Cart</button></div></div>
+ </article>`).join("");
+ document.getElementById("pagination").innerHTML=Array.from({length:pages},(_,i)=>`<button class="page-btn ${i+1===page?"active":""}" onclick="page=${i+1};renderProducts();document.getElementById('products').scrollIntoView({behavior:'smooth'})">${i+1}</button>`).join("");
+}
+function filterCat(cat){activeCat=cat;page=1;document.getElementById("search").value="";renderProducts()}
+function openProduct(id){
+ const p=products.find(x=>x.id===id);
+ document.getElementById("modalContent").innerHTML=`<div class="product-detail">
+ <div class="detail-image" id="detailImage"><img src="${p.img}" alt="${p.name}" onclick="this.parentElement.classList.toggle('zoomed')"></div>
+ <div class="detail-info"><div class="eyebrow">${p.cat}</div><h2>${p.name}</h2><div class="price">${money(p.price)}</div><p>${p.desc}</p><p><b>Product enquiry:</b> Confirm availability, dimensions, finish, delivery and final price with Jai Maa Bhawani Marbles before purchase.</p><div class="modal-actions"><button class="btn outline" onclick="addCart(${p.id});closeModal()">Add to Cart</button><a class="btn" target="_blank" href="https://wa.me/${WA}?text=${encodeURIComponent("Hello Jai Maa Bhawani Marbles, I am interested in: "+p.name+" ("+money(p.price)+"). Please share availability and details.")}">WhatsApp Enquiry</a></div></div></div>`;
+ document.getElementById("modalBackdrop").classList.add("open");
+}
+function closeModal(){document.getElementById("modalBackdrop").classList.remove("open")}
+function addCart(id){let x=cart.find(i=>i.id===id);if(x)x.qty++;else cart.push({id,qty:1});saveCart();openCart()}
+function saveCart(){localStorage.setItem("jmb_cart",JSON.stringify(cart));document.getElementById("cartCount").textContent=cart.reduce((s,i)=>s+i.qty,0);renderCart()}
+function renderCart(){
+ const el=document.getElementById("cartItems"),foot=document.getElementById("cartFooter");
+ if(!cart.length){el.innerHTML='<div class="empty">Your cart is empty.<br><br><a class="btn" href="#products" onclick="closeCart()">Browse Products</a></div>';foot.innerHTML="";return}
+ let total=0;
+ el.innerHTML=cart.map(i=>{let p=products.find(x=>x.id===i.id);total+=p.price*i.qty;return `<div class="cart-item"><img src="${p.img}" alt=""><div><h4>${p.name}</h4><p>${money(p.price)}</p><div class="qty"><button onclick="changeQty(${p.id},-1)">−</button><span>${i.qty}</span><button onclick="changeQty(${p.id},1)">+</button></div></div><button class="close" style="width:30px;height:30px" onclick="removeCart(${p.id})">×</button></div>`}).join("");
+ foot.innerHTML=`<div class="cart-total"><span>Total</span><span>${money(total)}</span></div><button class="btn" style="width:100%" onclick="checkoutWhatsApp()">Order Cart on WhatsApp →</button><p style="font-size:10px;color:var(--muted);margin-top:10px">Final price, availability and delivery are confirmed on WhatsApp.</p>`;
+}
+function changeQty(id,d){let x=cart.find(i=>i.id===id);x.qty+=d;if(x.qty<=0)removeCart(id);else saveCart()}
+function removeCart(id){cart=cart.filter(i=>i.id!==id);saveCart()}
+function openCart(){renderCart();document.getElementById("cartBackdrop").classList.add("open")}
+function closeCart(){document.getElementById("cartBackdrop").classList.remove("open")}
+function checkoutWhatsApp(){
+ let total=cart.reduce((s,i)=>s+products.find(p=>p.id===i.id).price*i.qty,0);
+ let lines=cart.map(i=>{let p=products.find(p=>p.id===i.id);return `${p.name} x ${i.qty} — ${money(p.price*i.qty)}`}).join("\n");
+ let msg=`Hello Jai Maa Bhawani Marbles,\n\nI would like to order/enquire about:\n${lines}\n\nCatalogue total: ${money(total)}\nPlease confirm availability, final price and delivery details.`;
+ window.open("https://wa.me/"+WA+"?text="+encodeURIComponent(msg),"_blank");
+}
+function sendEnquiry(e){e.preventDefault();let msg=`Hello Jai Maa Bhawani Marbles,\n\nName: ${name.value}\nPhone: ${phone.value}\nProduct/Requirement: ${interest.value}\nMessage: ${message.value}`;window.open("https://wa.me/"+WA+"?text="+encodeURIComponent(msg),"_blank")}
+function faq(btn){btn.parentElement.classList.toggle("open");btn.querySelector("span").textContent=btn.parentElement.classList.contains("open")?"−":"+"}
+function toggleMenu(){let m=document.getElementById("mobileMenu");m.style.display=m.style.display==="none"?"block":"none"}
+let slide=0;function goSlide(n){slide=n;document.querySelectorAll(".slide").forEach((x,i)=>x.classList.toggle("active",i===n));document.querySelectorAll(".dot").forEach((x,i)=>x.classList.toggle("active",i===n))}
+setInterval(()=>goSlide((slide+1)%3),5000);
+document.getElementById("year").textContent=new Date().getFullYear();
+saveCart();renderProducts();
+document.addEventListener("keydown",e=>{if(e.key==="Escape"){closeModal();closeCart()}})
+</script>
 </body>
 </html>
